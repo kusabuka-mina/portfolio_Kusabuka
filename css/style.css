@@ -1,1 +1,84 @@
 @charset "UTF-8";
+
+
+
+
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-top: 3px solid #86c1b5;
+    border-bottom: 1px solid #86c1b5;
+    color: #86c1b5;
+}
+
+.logo {
+    font-size: 37px;
+    font-family: "貂明朝";
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo .en {
+    font-size: 20px;
+    font-family: "Larken";
+    line-height: 1.75;
+    writing-mode: horizontal-tb;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.menu {
+    font-size: 30px;
+    font-family: "Larken";
+}
+
+/* ファーストビュー */
+.first-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+    max-width: 1200px;
+    margin: 90px auto;
+}
+
+.fv-left {
+    position: relative;
+    width: 550px;
+    height: 1507px;
+    flex: 0 0 560px;
+}
+
+.girl {
+    display: block;
+    width: 550px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.root {
+    position: absolute;
+    width: 1427px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+.fv-right {
+    color: #86c1b5;
+}
+
+.fv-title {
+    font-size: 117px;
+    font-family: "Larken";
+    line-height: 1.8px;
+}
