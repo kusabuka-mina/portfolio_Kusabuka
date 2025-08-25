@@ -22,7 +22,7 @@
     writing-mode: vertical-rl;
     text-orientation: upright;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .logo .en {
@@ -41,8 +41,6 @@
 
 /* ファーストビュー */
 .first-view {
-    display: flex;
-    align-items: center;
     justify-content: center;
     gap: 42px;
     max-width: 1200px;
@@ -51,26 +49,29 @@
 
 .fv-left {
     position: relative;
-    width: 550px;
-    height: 1507px;
-    flex: 0 0 560px;
+    display: flex;
+    align-items: center;
 }
 
 .girl {
     display: block;
-    width: 550px;
+    max-width: 550px;
+    width: 40%;
     height: auto;
     position: relative;
     z-index: 2;
+    margin-left: 10%;
 }
 
 .root {
     position: absolute;
-    width: 1427px;
+    max-width: 1427px;
+    width: 100%;
     height: auto;
     z-index: 1;
     pointer-events: none;
     opacity: 0.95;
+    top: 80%;
 }
 
 .fv-right {
@@ -80,5 +81,41 @@
 .fv-title {
     font-size: 117px;
     font-family: "Larken";
-    line-height: 1.8px;
 }
+
+/* コンセプト */
+.concept {
+    position: absolute;
+    right: 64px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 97px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-right: 18%;
+    padding: 80px 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.concept-title {
+    font-size: 45px;
+    line-height: 1.75;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.concept-text2 {
+    font-size: 14px;
+    line-height: 1.7;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+/* ・メニューバーの名前が左に縦書き、その横に横書きを入れたいのですが、縦並びになってしまいます。
+・フォントがトップページが縦書きの部分はほぼ貂明朝をつかっているのですが、リセットCSSにかいたらいい
+でしょうか？CSSで一個一個書いていたのですが適応されず、面倒くさくなってしまいました。
+・今一番はHTMLの書き方がわからず、とくにどこまでをdivなどで囲うのかと、余白の取り方がわかりません。
+最初のほうの添削で、どのような構造になっているからこのようにかく」と教えていただけたら嬉しいです。 */
