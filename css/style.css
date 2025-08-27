@@ -1,31 +1,68 @@
 @charset "UTF-8";
 
 
-
+body {
+    max-width: 1200px;
+}
 
 /* ヘッダー */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    border-top: 3px solid #86c1b5;
-    border-bottom: 1px solid #86c1b5;
+    padding: 30px 60px;
+    /* border-top: 3px solid #86c1b5;
+    border-bottom: 1px solid #86c1b5; */
     color: #86c1b5;
+    position: relative;
+}
+
+/* .header::before,
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+} */
+
+.header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: #86c1b5;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 1px;
+    background: #86c1b5;
 }
 
 .logo {
-    font-size: 37px;
     font-family: "貂明朝";
     line-height: 1.8;
     letter-spacing: 0.1em;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
     display: flex;
     align-items: center;
+    gap: 1%;
 }
 
-.logo .en {
+.kusabuka-ja {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: inline-block;
+    font-size: 37px;
+
+}
+
+.kusabuka-en {
     font-size: 20px;
     font-family: "Larken";
     line-height: 1.75;
@@ -39,18 +76,14 @@
     font-family: "Larken";
 }
 
+
 /* ファーストビュー */
 .first-view {
+    display: flex;
     justify-content: center;
     gap: 42px;
     max-width: 1200px;
     margin: 90px auto;
-}
-
-.fv-left {
-    position: relative;
-    display: flex;
-    align-items: center;
 }
 
 .girl {
@@ -74,48 +107,452 @@
     top: 80%;
 }
 
-.fv-right {
-    color: #86c1b5;
-}
-
 .fv-title {
     font-size: 117px;
     font-family: "Larken";
+    color: #8bc2b4;
+    text-align: center;
 }
 
 /* コンセプト */
 .concept {
-    position: absolute;
-    right: 64px;
-    bottom: 40px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row-reverse;
     gap: 97px;
+    margin-right: 18%;
+    /* padding: 80px 0; */
+    padding: 80px 20% 0 79%;
+    max-width: 1200px;
+}
+
+.concept-box {
+    /* font-size: 45px;
+    line-height: 1.75; */
     writing-mode: vertical-rl;
     text-orientation: upright;
-    margin-right: 18%;
-    padding: 80px 0;
-    margin: 0 auto;
-    max-width: 1200px;
+
+}
+
+.kana {
+    font-size: 12px;
+    padding-left: 3px;
 }
 
 .concept-title {
     font-size: 45px;
-    line-height: 1.75;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
 }
 
-.concept-text2 {
+.concept-left {
+    display: flex;
+    gap: 32px;
     font-size: 14px;
     line-height: 1.7;
     writing-mode: vertical-rl;
     text-orientation: upright;
 }
 
-/* ・メニューバーの名前が左に縦書き、その横に横書きを入れたいのですが、縦並びになってしまいます。
-・フォントがトップページが縦書きの部分はほぼ貂明朝をつかっているのですが、リセットCSSにかいたらいい
-でしょうか？CSSで一個一個書いていたのですが適応されず、面倒くさくなってしまいました。
-・今一番はHTMLの書き方がわからず、とくにどこまでをdivなどで囲うのかと、余白の取り方がわかりません。
-最初のほうの添削で、どのような構造になっているからこのようにかく」と教えていただけたら嬉しいです。 */
+.concept-text {
+    align-items: center;
+}
+
+.concept-text2 {
+    line-height: 1.7;
+}
+
+
+/* コンセプト２ */
+.intro {
+    padding-top: 359px;
+}
+
+.intro-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 53px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-img {
+    width: 142px;
+    height: auto;
+}
+
+.intro-text {
+    font-size: 14px;
+    line-height: 2.2;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+/* わたしについて */
+.about {
+    display: flex;
+    gap: 9%;
+    padding-top: 286px;
+    margin: 0 auto;
+    max-width: 1200px;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-left {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 217px;
+}
+
+.about-texts {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    padding-top: 24px;
+}
+
+.about-texts::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: 198px;
+    background: #000;
+}
+
+.vtitle {
+    order: 2;
+}
+
+.vtext {
+    order: 1;
+}
+
+
+.vtitle {
+    font-size: 28px;
+    margin-left: 71px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.vtext {
+    font-size: 14px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    line-height: 1.7;
+}
+
+.about-illust {
+    width: 132px;
+}
+
+.about-right img {
+    width: 467px;
+    height: auto;
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 162px;
+    height: 62px;
+    background: #91c9be;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 9999px;
+}
+
+.btn:hover {
+    background: #3c9585;
+}
+
+.btn span {
+    font-size: 10px;
+}
+
+.about-cta {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+
+/* 実績について */
+.works {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 118px;
+    padding-top: 158px;
+    max-width: 1200px;
+}
+
+.works-left {
+    margin-left: 19%;
+}
+
+.works-left img {
+    width: 494px;
+    height: auto;
+    display: block;
+}
+
+.works-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 19%;
+}
+
+.works-text {
+    display: flex;
+    gap: 70px;
+}
+
+.wtitle,
+.wtext {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.wtitle {
+    order: 2;
+    font-size: 28px;
+}
+
+.wtext {
+    order: 1;
+    font-size: 14px;
+}
+
+.works-illust {
+    width: 116px;
+    height: auto;
+}
+
+.works-cta {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.works-cta img,
+.works-cta a {
+    margin: 0;
+    padding: 0;
+}
+
+/* ひらけること */
+.open {
+    max-width: 1200px;
+    padding-top: 357px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 230px;
+}
+
+.open-illust {
+    display: block;
+    width: 197px;
+    height: auto;
+}
+
+.open-texts {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 71px;
+}
+
+.otitle {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 28px;
+}
+
+.otext {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 14px;
+}
+
+.otitle {
+    order: 2;
+}
+
+.otext {
+    order: 1;
+}
+
+/* .service {
+    display: flex;
+    gap: 108px;
+} */
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 108px;
+}
+
+
+.thumb {
+    position: relative;
+    width: 261px;
+    height: 162px;
+    border: 2px solid;
+    border-radius: 16px;
+}
+
+/* .frame{
+    position: absolute;
+    inset:0;
+} */
+
+.hand-rose {
+    position: absolute;
+    width: 223px;
+    display: block;
+}
+
+.service-text h2 {
+    font-size: 45px;
+}
+
+.service-text p {
+    font-size: 14px;
+    margin-top: 36px;
+    line-height: 2.2;
+}
+
+/* お問合せ */
+.contact {
+    text-align: center;
+    margin-top: 376px;
+    display: flex;
+}
+
+.contact-main {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.contact-sub {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.contact-text {
+    align-items: center;
+    justify-content: center;
+    gap: 37px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-btn {
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 33px 125px;
+    margin-top: 35px;
+}
+
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 14px;
+    padding-top: 37px;
+    color: #89c8bd;
+    margin: 0 auto;
+}
+
+.contact-illust img {
+    display: block;
+    width: 248px;
+}
+
+/* 最後の文 */
+
+.quote {
+    margin: 211px auto 350px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.v {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 28px;
+}
+
+.run {
+    width: 124px;
+    height: auto;
+}
+
+/* フッター */
+.footer {
+    background: #545352;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.footer-logo {
+    font-size: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+.footer-info {
+    font-size: 14px;
+    text-align: right;
+}
+
+/* お問合せボタン */
+.contact-fixed {
+    position: fixed;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.x-btn {
+    width: 53px;
+    height: 135px;
+    background: #86c1b5;
+    color: #ffffff;
+    font-size: 16px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+
+}
+
+.x-illust {
+    width: 49px;
+    height: auto;
+}
