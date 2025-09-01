@@ -7,6 +7,16 @@
     <title>Kusabuka</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'bsy2ilo',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 
 <body>
@@ -14,7 +24,7 @@
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
-        <nav class="menu">MENU</nav>
+        <button class="menu">MENU</button>
     </header>
 
     <!-- ファーストビュー -->
@@ -60,12 +70,15 @@
                     名前のない形に、言葉を与える。<br>
                     意味のないものに、タグや線を引いて、輪郭をつける。<br>
                     配色ひとつ、余白ひとつが、世界の見え方を変える。<br>
+                    <br>
 
                     たったひとつのデザインが、あなたの認知に、<br>
                     かすかな揺らぎを生む。<br>
+                    <br>
 
                     それは、芽がひらくような変化かもしれない。<br>
                     花が咲くまえの、静かな息づかいかもしれない。<br>
+                    <br>
 
                     草深く、<br>
                     あなたの世界がひらきますように。
@@ -83,6 +96,12 @@
     <!-- わたしについて -->
     <section class="about">
         <div class="about-left">
+            <div class="about-cta">
+                <img src="./1x/歩き出すばら.psd.png" alt="walk rose" class="about-illust">
+                <a href="#" class="btn">草深く、奥へ<span>▷</span></a>
+            </div>
+
+
             <div class="about-texts">
                 <p class="vtitle">（一）わたしについて</p>
                 <p class="vtext">
@@ -91,11 +110,6 @@
                     名前のない想いに、形を与えながら、<br>
                     わたしの輪郭をつくっている。
                 </p>
-            </div>
-
-            <div class="about-cta">
-                <img src="./1x/歩き出すばら.psd.png" alt="walk rose" class="about-illust">
-                <a href="#" class="btn">草深く、奥へ<span>▷</span></a>
             </div>
 
         </div>
@@ -115,6 +129,12 @@
 
         <!-- 右テキスト・ボタン -->
         <div class="works-right">
+
+            <div class="works-cta">
+                <img src="./1x/アセット 8.png" alt="転ぶバラ" class="works-illust">
+                <a href="#" class="btn">草深く、奥へ<span>▷</span></a>
+            </div>
+
             <div class="works-text">
                 <p class="wtitle">（二）実績について</p>
                 <p class="wtext">
@@ -125,10 +145,6 @@
                 </p>
             </div>
 
-            <div class="works-cta"></div>
-            <img src="./1x/アセット 8.png" alt="転ぶバラ" class="works-illust">
-            <a href="#" class="btn">草深く、奥へ<span>▷</span></a>
-        </div>
     </section>
 
     <!-- ひらけること -->
@@ -151,24 +167,22 @@
 
     <section class="service">
         <div class="service-item">
-            <div class="thumb">
-                <div class="frame"></div>
-                <img src="./1x/アセット 10.png" alt="手を差し伸べるばら" class="hand-rose">
-            </div>
+            <div class="frame"></div>
+            <img src="./1x/アセット 10.png" alt="手を差し伸べるばら" class="hand-rose">
+        </div>
 
-            <div class="service-texts">
-                <h2>DESIGN</h2>
-                <p>
-                    WebサイトのバナーやLPなどのWebデザインから、ロゴ・名刺・チラシなどのグラフィック制作まで対応可能です。コンセプトの言語化、感情に寄り添ったビジュアル設計を得意とし、「想いをかたちにする」デザインを心がけています。
-                </p>
-            </div>
+        <div class="service-texts">
+            <h2>DESIGN</h2>
+            <p>
+                WebサイトのバナーやLPなどのWebデザインから、ロゴ・名刺・チラシなどのグラフィック制作まで対応可能です。コンセプトの言語化、感情に寄り添ったビジュアル設計を得意とし、「想いをかたちにする」デザインを心がけています。
+            </p>
         </div>
     </section>
 
     <section class="service">
         <div class="service-item">
-            <div class="thumb"></div>
-            <img src="./1x/一緒に歩くバラ.psd.png" alt="一緒に歩くバラ">
+            <div class="frame"></div>
+            <img src="./1x/一緒に歩くバラ.psd.png" alt="一緒に歩くバラ" class="walk-with-rose">
         </div>
 
         <div class="service-texts">
@@ -177,24 +191,23 @@
                 HTML/CSS/JQueryを用いたサイトの、レスポンシブ対応まで含めたコーディングが可能です。デザインデータをもとに、デザイン再現度の高い実装を行うことができます。</p>
             </p>
         </div>
-        </div>
     </section>
 
     <!-- お問合せ -->
     <section class="contact">
-        <div class="contact-illust">
-            <img src="./1x/アセット 12.png" alt="すれ違うバラ">
-        </div>
+        <div class="contact-inner">
+            <div class="contact-illust">
+                <img src="./1x/アセット 12.png" alt="すれ違うバラ">
+            </div>
 
-        <div class="contact-text">
-            <p class="contact-main">
-                ご相談・ご依頼お待ちしております。
-            </p>
-            <p class="contact-sub">
-                揺れを大切にする感性と、親身に寄り添う力が強みです。無料でご相談・お見積りいたします。
-            </p>
+            <div class="contact-texts">
+                <p class="contact-main">
+                    ご相談・ご依頼お待ちしております。
+                </p>
+                <p class="contact-sub">
+                    揺れを大切にする感性と、親身に寄り添う力が強みです。無料でご相談・お見積りいたします。
+                </p>
 
-            <div class="contact-box">
                 <a href="#" class="contact-btn">お問合せフォームはこちら</a>
                 <p class="vertical-text">
                     この場所から、<br>
@@ -203,10 +216,6 @@
                 </p>
             </div>
         </div>
-
-        <!-- <div class="contact-illust">
-            <img src="./1x/アセット 12.png" alt="すれ違うバラ">
-        </div> -->
     </section>
 
     <section class="quote">
@@ -234,14 +243,14 @@
         </nav>
 
         <div class="footer-logo">
-            Kusabuka|クサブカ
+            Kusabuka | クサブカ
         </div>
 
         <div class="footer-info">
             <p>［事業形態］個人事業主</p>
             <p>［事業内容］デザイン/コード</p>
             <p>［住所］新潟県新潟市</p>
-            <p>［お問合せ]mina.kusabukaa@gmail.com</p>
+            <p>［お問合せ] mina.kusabukaa@gmail.com</p>
         </div>
     </footer>
 
