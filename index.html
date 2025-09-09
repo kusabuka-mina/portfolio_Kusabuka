@@ -7,6 +7,7 @@
     <title>Kusabuka</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./1x/favicon (1).ico">
     <script>
         (function (d) {
             var config = {
@@ -22,23 +23,41 @@
 <body>
 
     <!-- ローディング -->
-    <div class="loading-copy js-fadein">
-        <span>草深く、</span>
-        <span>揺れるままに、</span>
-        <span>世界を描く。</span>
+    <div class="loading">
+        <p>
+            草深く、<br>
+            揺れるままに、<br>
+            世界を描く。
+        </p>
+    </div>
+
+    <!-- メニュー -->
+    <div id="menu" class="overlay">
+        <button id="closeBtn">CLOSE</button>
+
+        <img src="./1x/歩き出すばら.psd.png" alt="歩き出すバラ" class="menu-illustration">
+        <ul>
+            <li><a href="#concept">コンセプト</a></li>
+            <li><a href="#about">わたしについて</a></li>
+            <li><a href="works">実績について</a></li>
+            <li><a href="#open">ひらけること</a></li>
+            <li><a href="#contact">お問合せ</a></li>
+        </ul>
     </div>
 
     <!-- ヘッダー -->
-    <header class="header">
+    <header id="fixed-header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
-        <button class="menu">MENU</button>
+        <button id="menuBtn">MENU</button>
     </header>
 
     <!-- ファーストビュー -->
     <div class="first-view">
         <img src="./1X/ばらちゃんファーストビュー.psd.png" alt="バラの女の子" class="girl">
         <div class="img-wrap">
-            <img src="./1X/アセット 2.png" alt="根" class="root">
+            <div>
+                <img src="./1X/アセット 2.png" alt="根" class="root">
+            </div>
         </div>
 
         <h1 class="fv-title">Kusabuka</h1>
@@ -70,7 +89,7 @@
 
             <!-- 左の花 -->
             <div class="intro-img">
-                <img src="./1x/アセット 4.png" alt="左の花">
+                <img src="./1x/アセット 1.svg" alt="左の花">
             </div>
 
             <!-- 中央のテキスト -->
@@ -279,6 +298,25 @@
                 el.classList.add('is-show');
             });
         });
+
+        (function () {
+            const fh = document.getElementById('fixed-header');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 200) {
+                    fh.classList.remove('is-show');
+                } else {
+                    fh.classList.add('is-show');
+                }
+            });
+        }());
+
+        $("#menuBtn").click(function () {
+            $("menu").show();
+        });
+        $("closeBtn").click(function () {
+
+        });
+        }
     </script>
 
 
