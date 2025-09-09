@@ -130,6 +130,28 @@ button:active {
     margin-left: 23%;
 }
 
+.img-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrap::before {
+    animation: img-wrap 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: #fff;
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes img-wrap {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
 .root {
     position: absolute;
     max-width: 1427px;
@@ -137,7 +159,7 @@ button:active {
     height: auto;
     z-index: 1;
     pointer-events: none;
-    opacity: 0;
+    /* opacity: 0; */
     top: 80%;
     transform: translateY(-24px);
     transition: opacity 900ms ease, transform 900ms ease;
