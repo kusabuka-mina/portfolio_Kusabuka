@@ -21,6 +21,13 @@
 
 <body>
 
+    <!-- ローディング -->
+    <div class="loading-copy js-fadein">
+        <span>草深く、</span>
+        <span>揺れるままに、</span>
+        <span>世界を描く。</span>
+    </div>
+
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
@@ -37,7 +44,7 @@
     </div>
 
     <!-- コンセプト -->
-    <section class="concept">
+    <section class="concept concept-main">
         <div class="concept-box">
             <p class="kana">くさぶか</p>
             <p class="concept-title">草深く、ひらく。</p>
@@ -264,7 +271,13 @@
 
 
 
-
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.js-fadein').forEach(el => {
+                el.classList.add('is-show');
+            });
+        });
+    </script>
 
 
 

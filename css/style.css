@@ -5,6 +5,34 @@ body {
     max-width: 1200px;
 }
 
+/* ローディング */
+.js-fadein {
+    opacity: 0;
+}
+
+.js-fadein.is-show {
+    opacity: 1;
+    transition: opacity .6s ease;
+}
+
+.js-fadein.is-show span {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: line 700ms ease both;
+}
+
+.js-fadein.is-show span:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.js-fadein.is-show span:nth-child(2) {
+    animation-delay: .25s;
+}
+
+.js-fadein.is-show span:nth-child(3) {
+    animation-delay: .4s;
+}
+
 /* ヘッダー */
 .header {
     display: flex;
@@ -99,7 +127,7 @@ button:active {
     height: auto;
     position: relative;
     z-index: 2;
-    margin-left: 10%;
+    margin-left: 23%;
 }
 
 .root {
@@ -109,12 +137,20 @@ button:active {
     height: auto;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.95;
+    opacity: 0;
     top: 80%;
+    transform: translateY(-24px);
+    transition: opacity 900ms ease, transform 900ms ease;
+    will-change: opacity, transform;
+}
+
+.root.is-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .fv-title {
-    font-size: clamp(30px, 9vw, 117px);
+    font-size: clamp(30px, 8vw, 117px);
     font-family: "Larken";
     color: #8bc2b4;
     text-align: center;
@@ -193,11 +229,13 @@ button:active {
 /* わたしについて */
 .about {
     display: flex;
-    gap: 9%;
     margin: 364px 8% 0 8%;
     max-width: 1200px;
     align-items: center;
+    justify-content: space-between;
     gap: 13%;
+    position: relative;
+    overflow: visible;
 }
 
 .about-left {
@@ -255,6 +293,13 @@ button:active {
     padding: 0;
 }
 
+.about-right {
+    flex-shrink: 0;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 .about-illust {
     width: 132px;
@@ -266,8 +311,10 @@ button:active {
 
 .about-right img {
     display: block;
-    width: 467px;
+    max-width: 100%;
     height: auto;
+    max-width: none;
+    opacity: 1;
 }
 
 
@@ -303,16 +350,23 @@ button:active {
     gap: 118px;
     margin: 220px 8% 0 8%;
     max-width: 1200px;
+    position: relative;
+    overflow: visible;
 }
 
 .works-left {
     padding-top: 100px;
+    flex: 0 0 auto;
+    align-self: center;
+    z-index: 1;
 }
 
 .works-left img {
-    width: 494px;
+    width: clamp(240px, 36vw, 560px);
     height: auto;
     display: block;
+    max-width: none;
+    opacity: 1;
 }
 
 .works-right {
@@ -434,13 +488,15 @@ button:active {
     display: flex;
     gap: 108px;
     align-items: center;
-    margin: 125px 160px 111px 160px;
+    margin: 125px auto 111px;
+    max-width: 844px;
+    padding: 0 2%;
 }
 
 
 .service-item {
     position: relative;
-    width: 700px;
+    width: 30%;
     aspect-ratio: 4/3;
 }
 
@@ -462,6 +518,10 @@ button:active {
     object-fit: contain;
     z-index: 1;
     pointer-events: none;
+}
+
+.service-texts {
+    width: 56%;
 }
 
 .service-texts h2 {
@@ -491,7 +551,7 @@ button:active {
 
 /* お問合せ */
 .contact {
-
+    position: relative;
     text-align: center;
     margin-top: 270px;
 }
@@ -533,6 +593,7 @@ button:active {
 .contact-btn {
     display: inline-block;
     font-size: 14px;
+    line-height: 80px;
     text-decoration: none;
     border: 1px solid;
     padding: 12px 28px;
@@ -556,11 +617,14 @@ button:active {
     padding-top: 37px;
     color: #89c8bd;
     margin: 0 auto;
+    text-align: start;
 }
 
 .contact-illust img {
     display: block;
     width: 248px;
+    position: absolute;
+    top: 30%;
 }
 
 /* 最後の文 */
@@ -570,6 +634,7 @@ button:active {
     display: flex;
     justify-content: center;
     gap: 60px;
+    position: relative;
 }
 
 .v {
@@ -582,7 +647,10 @@ button:active {
 .run {
     width: 124px;
     height: auto;
-    margin-top: 200px;
+    position: absolute;
+    top: 73%;
+    left: 38%;
+
 }
 
 /* フッター */
@@ -596,7 +664,6 @@ button:active {
 }
 
 .footer-nav {
-    /* margin-bottom: 40px; */
     border-bottom: 0.75px solid #fff;
     padding-bottom: 30px;
 }
@@ -668,23 +735,638 @@ button:active {
     z-index: 2;
 }
 
-/* 質問 
-・ファーストビューのイラストのpositionがうまくいかない。
-・コンセプトの部分がブレークポイントをつけたほうがよいか。
-・わたしについての部分が写真の右側に余白がついてしまっているのですが、
-なにがついているのかわからない。
-・わたしについての画像が画面幅を小さくしたときに小さくなってしまうのは、
-どうにかしたほうがよいか。
-・実績についてのところが、たぶん余白がはみでてしまっているのですが、どうしたらよいか。
-・ひらけることのデザイン、コードのところが、同じクラス名にしているのに
-サイズや余白が違うのがどうしたらよいか。
-・コードのところのイラストが、画面幅を小さくすると枠から離れてしまう。
-・お問合せのところが、ボタン内の文字が上下の真ん中に来るようにしたいがうまくいかなかった。
-・お問合せのこの場所から～の縦文字が「ひらきますように」のところが頭一つ分
-とびでてしまって頭が揃いません。
-・お問合せの部分のばらイラストの配置が上の方に行ってしまってできませんでした。
-・最後の文が、ｖクラスのテキストを真ん中にしたいのに、sectionで真ん中に来るので、
-文を真ん中にしたいです。
+/* about.html */
+.about-simple {
+    margin: 20px auto;
+    max-width: 1200px;
+}
 
-よろしくお願いいたします。
-これからレスポンシブやっていきます。 */
+.as-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 24px;
+    text-align: center;
+}
+
+
+/* 吹き出し */
+.speech {
+    position: absolute;
+    bottom: -30px;
+    left: -40px;
+    width: 180px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+
+}
+
+.en {
+    color: #86c1b5;
+}
+
+.as-right h2 {
+    text-align: right;
+}
+
+.as-right p {
+    text-align: right;
+}
+
+/* about */
+.section-title {
+    text-align: center;
+    margin: 240px auto;
+}
+
+.section-sub {
+    font-size: 20px;
+    color: #86c1b5;
+    margin-bottom: 3px;
+}
+
+.section-main {
+    font-size: 130px;
+    color: #86c1b5;
+    font-family: larken, sans-serif;
+}
+
+/* story */
+.story {
+    display: flex;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 80px auto;
+    align-items: flex-start;
+}
+
+.story-nav {
+    flex: 1;
+}
+
+.story-nav ol {
+    padding: 0;
+    margin: 0;
+}
+
+.story-nav li {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.story-illust {
+    flex: 1;
+    text-align: center;
+}
+
+.story-illust img {
+    max-width: 100%;
+    height: auto;
+}
+
+.story-text {
+    flex: 2;
+}
+
+.story-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.story-text span {
+    font-size: 14px;
+}
+
+/* works */
+.works-title {
+    text-align: center;
+    margin: 80px auto;
+}
+
+.works-sub {
+    font-size: 20px;
+    color: #86c1b5;
+    margin-bottom: 24px;
+}
+
+.works-main {
+    font-size: 130px;
+    color: #86c1b5;
+    font-family: larken, sans-serif;
+}
+
+/* works作品一覧 */
+.works-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.works-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* works-sub.html */
+.works-conpare {
+    position: relative;
+    text-align: center;
+}
+
+.works-conpare img {
+    width: 700px;
+    height: auto;
+}
+
+.captions {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px auto 0;
+    width: 700px;
+}
+
+.caption-a,
+.caption-b {
+    font-size: 14px;
+}
+
+.works-detail {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.works-detail h3 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+}
+
+.works-detail h4 {
+    font-size: 14px;
+    margin: 15px 0 8px;
+}
+
+.works-detail p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 15px;
+}
+
+/* works画像 */
+.works-images {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.works-images img {
+    width: 45%;
+    height: auto;
+    display: block;
+}
+
+.works-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.works-row img {
+    width: 250px;
+    height: auto;
+    display: block;
+}
+
+.works-btn {
+    text-align: center;
+}
+
+.works-btn a {
+    display: inline-block;
+    padding: 12px 32px;
+    ;
+    background: #86c1b5;
+    color: #fff;
+    border-radius: 24px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* contact */
+.contact-section {
+    text-align: center;
+    margin: 140px auto;
+}
+
+.contact-title {
+    font-size: 130px;
+    line-height: 1.75;
+    color: #86c1b5;
+    font-family: larken, sans-serif;
+}
+
+.contact-sub {
+    font-size: 20px;
+    line-height: 1.75;
+    color: #86c1b5;
+}
+
+.contact2-text {
+    font-size: 14px;
+    line-height: 2.8;
+    max-width: 800px;
+}
+
+.contact2-text p {
+    margin-bottom: 20px;
+}
+
+.sns {
+    border-top: 0.75px solid #333;
+    border-bottom: 0.75px solid #333;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+/* 文 */
+.vertical-message {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #89c8bd;
+    text-align: start;
+    margin: 60px auto;
+}
+
+/* バラちゃん図鑑 */
+.barachan-title {
+    text-align: center;
+    margin: 100px auto;
+    max-width: 1200px;
+}
+
+.barachan-title h1 {
+    font-size: 80px;
+    color: #86c1b5;
+}
+
+.barachan-sub {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #86c1b5;
+}
+
+/* ストーリー */
+
+.rose {
+    margin: 140px auto;
+    position: relative;
+    max-width: 1200px;
+    height: 400px;
+}
+
+
+.rose-1 {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 10%;
+    height: auto;
+}
+
+.rose-body {
+    position: absolute;
+    top: 10%;
+    left: 37%;
+    width: 60%;
+}
+
+.rose-title {
+    font-size: 25px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.rose-text {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.toge {
+    margin: 140px auto;
+    position: relative;
+    max-width: 1200px;
+    height: 1800px;
+}
+
+.rose-2 {
+    position: absolute;
+    left: 23%;
+    top: 35%;
+    width: 13%;
+    height: auto;
+}
+
+.rose-3 {
+    position: absolute;
+    left: 76%;
+    top: 55%;
+    width: 15%;
+    height: auto;
+}
+
+.rose-4 {
+    position: absolute;
+    left: 8%;
+    top: 10%;
+    width: 18%;
+    height: auto;
+}
+
+.rose-5 {
+    position: absolute;
+    left: 15%;
+    top: -9%;
+    width: 18%;
+    height: auto;
+}
+
+.rose-6 {
+    position: absolute;
+    left: 75%;
+    top: -8%;
+    width: 18%;
+    height: auto;
+}
+
+.rose-7 {
+    position: absolute;
+    left: 10%;
+    top: 17%;
+    width: 17%;
+    height: auto;
+}
+
+.rose-8 {
+    position: absolute;
+    left: 16%;
+    top: 120%;
+    width: 12%;
+    height: auto;
+}
+
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width:767px) {
+
+    /* ボタン */
+
+    .x-btn {
+        font-size: 11px;
+        width: 35px;
+        height: 96px;
+        top: -4px;
+    }
+
+    .x-illust {
+        width: 40px;
+    }
+
+    /* ヘッダー */
+    .logo {
+        gap: 6px;
+    }
+
+    .header {
+        padding: 30px 15px;
+    }
+
+
+
+    .kusabuka-ja {
+        font-size: 20px;
+    }
+
+    .kusabuka-en {
+        font-size: 10px;
+    }
+
+    .menu {
+        font-size: 12px;
+    }
+
+    /* ファーストビュー */
+    .first-view {
+        flex-direction: column;
+        align-items: center;
+        gap: 57px;
+        margin: 50px auto;
+    }
+
+    .fv-title {
+        font-size: 64px;
+        line-height: 1.75;
+        margin-top: 10px;
+        margin-right: 0;
+        text-align: center;
+        order: -1;
+    }
+
+    .girl {
+        max-width: 80%;
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    .root {
+        max-width: 100%;
+        left: 0;
+        top: auto;
+        bottom: 0;
+    }
+
+    /* コンセプト */
+    .concept {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 180px;
+        padding: 0;
+        margin: 80px auto;
+    }
+
+    .concept-box {
+        order: -1;
+    }
+
+    .concept-title {
+        font-size: 35px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .kana {
+        font-size: 10px;
+    }
+
+    .concept-left {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .concept-main::before,
+    .concept-main::after {
+        content: "";
+        position: absolute;
+        top: 96px;
+        width: 120px;
+        height: 220px;
+        background: url("img/rose.png")no-repeat center/contain;
+        opacity: .95;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .concept-main::before {
+        left: -8px;
+        transform: scaleX(-1);
+    }
+
+    .concept-main::after {
+        right: -8px;
+    }
+
+    .concept-box,
+    .concept-left {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* about */
+    .about {
+        flex-direction: row;
+        align-items: flex-start;
+        min-height: 520px;
+    }
+
+    .about-right {
+        position: absolute;
+        right: clamp(0px, 6vw, 120px);
+        top: -270px;
+    }
+
+    /* 実績について */
+    .works {
+        flex-direction: row;
+        min-height: 560px;
+    }
+
+    .works-left {
+        position: absolute;
+        left: clamp(0px, 6vw, 120px);
+        bottom: 570px;
+    }
+
+    /* ひらけること */
+    .open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-top: 40px;
+        padding: 0 16px;
+    }
+
+    .service {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-item .frame {
+        border-radius: 10px;
+    }
+
+    /* design・コード */
+
+    .service {
+        gap: 5px;
+    }
+
+    .service-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-item img {
+        width: 100%;
+    }
+
+    .service-texts {
+        text-align: left;
+        margin: 0;
+    }
+
+    .contact-main {
+        font-size: 14px;
+    }
+
+    .contact-sub {
+        font-size: 8px;
+        color: #251e1c;
+    }
+
+    .contact-btn {
+        font-size: 10px;
+        border: 1px solid;
+        padding: 12px 28px;
+        margin-top: 10px;
+        width: 233px;
+        height: 45px;
+        text-align: center;
+    }
+
+    .contact-illust img {
+        width: 30%;
+        position: absolute;
+        top: 30%;
+        left: 2%;
+    }
+
+    .run {
+        width: 24%;
+        height: auto;
+        position: absolute;
+        top: 71%;
+        left: 23%;
+
+    }
+
+    /* フッター */
+    .footer-nav a {
+        flex-direction: column;
+        align-items: left;
+        gap: 12px;
+    }
+
+
+
+
+
+
+}
