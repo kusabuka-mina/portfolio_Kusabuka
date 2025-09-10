@@ -18,6 +18,7 @@
                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
         })(document);
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,9 +47,11 @@
     </div>
 
     <!-- ヘッダー -->
-    <header id="fixed-header">
-        <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
-        <button id="menuBtn">MENU</button>
+    <header id="fixed-header" class="is-show">
+        <div class="header">
+            <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
+            <button id="menuBtn">MENU</button>
+        </div>
     </header>
 
     <!-- ファーストビュー -->
@@ -294,10 +297,17 @@
 
     <script>
         window.addEventListener('load', () => {
-            document.querySelectorAll('.js-fadein').forEach(el => {
-                el.classList.add('is-show');
-            });
-        });
+            const load = document.querySelector('.loading')
+            setTimeout(function () {
+                load.classList.add('loaded')
+                setTimeout(function () {
+                    load.style.display = "none"
+                }, 500)
+            })
+        }), 3000
+
+            ;
+
 
         (function () {
             const fh = document.getElementById('fixed-header');
@@ -311,12 +321,12 @@
         }());
 
         $("#menuBtn").click(function () {
-            $("menu").show();
+            $("#menu").fadein();
         });
-        $("closeBtn").click(function () {
+        $("#closeBtn").click(function () {
+            $('#menu').fadeout();
 
         });
-        }
     </script>
 
 

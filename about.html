@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -150,7 +151,9 @@
 
             <!-- 真ん中イラスト -->
             <div class="story-illust">
-                <img src="./1x/光をさがすバラちゃん.psd.png" alt="光をさがす">
+                <a href="./book.html">
+                    <img src="./1x/光をさがすバラちゃん.psd.png" alt="光をさがす">
+                </a>
             </div>
 
             <!-- 右：本文 -->
@@ -260,6 +263,24 @@
             <p>［お問合せ] mina.kusabukaa@gmail.com</p>
         </div>
     </footer>
+    <script>
+        $(function () {
+            let nav = $('story-nav')
+            $(window).on('scroll', function () {
+                let navTop = nav.offset().top
+                $('story').each(function (index) {
+                    let sectionTop = $(this).offset().top
+                    if (navTop > sectionTop && navTop < sectionTop + $(this).outerHeight()) {
+                        nav.find('li').eq(index).addClass('color')
+                    } else {
+                        nav.find('li').eq(index).removeClass('color')
+                    }
+                })
+            })
+        })
+
+
+    </script>
 </body>
 
 </html>
