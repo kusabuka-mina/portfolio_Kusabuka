@@ -810,11 +810,12 @@ button:active {
     height: auto;
     margin: 0 auto 24px;
     text-align: center;
+    position: relative;
 }
 
 
 /* 吹き出し */
-.speech {
+/* .speech {
     position: absolute;
     bottom: -30px;
     left: -40px;
@@ -824,6 +825,29 @@ button:active {
     font-size: 14px;
     line-height: 1.7;
 
+} */
+
+.as-cols {
+    position: absolute;
+    bottom: -20%;
+    left: 3%;
+    width: 350px;
+    text-align: center;
+}
+
+.as-cols img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.as-cols p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 14px;
 }
 
 .en {
@@ -936,24 +960,32 @@ button:active {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
 
-.works-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
 
-.works-grid img {
-    width: 100%;
+.works-item {
+    background: url("./1X/アセット2-80.jpg")no-repeat center center;
+    background-size: cover;
+    padding: 16px;
+    text-align: center;
+}
+
+
+.works-item img {
+    max-width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 /* works-sub.html */
 .works-conpare {
     position: relative;
     text-align: center;
+    margin-top: 60px;
 }
 
 .works-conpare img {
@@ -1018,7 +1050,7 @@ button:active {
 }
 
 .works-row img {
-    width: 250px;
+    max-width: 250px;
     height: auto;
     display: block;
 }
@@ -1030,7 +1062,6 @@ button:active {
 .works-btn a {
     display: inline-block;
     padding: 12px 32px;
-    ;
     background: #86c1b5;
     color: #fff;
     border-radius: 24px;
