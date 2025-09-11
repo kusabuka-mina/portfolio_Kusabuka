@@ -129,7 +129,7 @@
         <div class="about-left">
             <div class="about-cta">
                 <img src="./1x/歩き出すばら.psd.png" alt="walk rose" class="about-illust">
-                <a href="#" class="btn">草深く、奥へ<span>▷</span></a>
+                <a href="./about.html" class="btn">草深く、奥へ<span>▷</span></a>
             </div>
 
 
@@ -163,7 +163,7 @@
 
             <div class="works-cta">
                 <img src="./1x/アセット 8.png" alt="転ぶバラ" class="works-illust">
-                <a href="#" class="btn">草深く、奥へ<span>▷</span></a>
+                <a href="./works.html" class="btn">草深く、奥へ<span>▷</span></a>
             </div>
 
             <div class="works-text">
@@ -239,7 +239,7 @@
                     揺れを大切にする感性と、親身に寄り添う力が強みです。無料でご相談・お見積りいたします。
                 </p>
 
-                <a href="#" class="contact-btn">お問合せフォームはこちら</a>
+                <a href="./contact.html" class="contact-btn">お問合せフォームはこちら</a>
                 <p class="vertical-text">
                     この場所から、<br>
                     あなたの世界が<br>
@@ -267,10 +267,10 @@
     <footer class="footer">
         <nav class="footer-nav">
             <a href="#">コンセプト</a>
-            <a href="#">わたしについて</a>
-            <a href="#">実績について</a>
-            <a href="#">ひらけること</a>
-            <a href="#">お問合せ</a>
+            <a href="./about.html">わたしについて</a>
+            <a href="./works.html">実績について</a>
+            <a href=".open">ひらけること</a>
+            <a href="./contact.html">お問合せ</a>
         </nav>
 
         <div class="footer-logo">
@@ -287,7 +287,7 @@
 
     <!-- お問合せボタン -->
     <div class="contact-fixed">
-        <a href="#contact" class="x-btn">
+        <a href="./contact.html" class="x-btn">
             お問合せ
         </a>
         <img src="./1x/はじまりのばら.psd.png" alt="rose" class="x-illust">
@@ -303,22 +303,22 @@
                 setTimeout(function () {
                     load.style.display = "none"
                 }, 500)
-            })
-        }), 3000
-
-            ;
+            }, 3000)
+        }),
 
 
-        (function () {
-            const fh = document.getElementById('fixed-header');
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 200) {
-                    fh.classList.remove('is-show');
-                } else {
-                    fh.classList.add('is-show');
-                }
-            });
-        }());
+
+
+            (function () {
+                const fh = document.getElementById('fixed-header');
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 200) {
+                        fh.classList.remove('is-show');
+                    } else {
+                        fh.classList.add('is-show');
+                    }
+                });
+            }());
 
         $("#menuBtn").click(function () {
             $("#menu").fadein();

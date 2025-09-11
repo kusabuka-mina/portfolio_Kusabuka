@@ -3,8 +3,8 @@
 
 /* ローディング */
 
-/* .loading {
-    text-align: center;
+.loading {
+    text-align: flex-start;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
     background: #fff;
     z-index: 1000;
     transition: 0.5s;
-} */
+}
 
 .loading.loaded {
     opacity: 0;
@@ -160,7 +160,7 @@ button {
     font-size: 30px;
     font-family: larken, sans-serif;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -759,7 +759,7 @@ button:active {
     background: #545352;
     color: #ffffff;
     padding: 60px;
-    text-align: left;
+    text-align: flex-start;
     font-size: 14px;
     font-family: source-han-sans-japanese, sans-serif;
 }
@@ -879,6 +879,10 @@ button:active {
     color: #86c1b5;
 }
 
+.as-right {
+    margin-right: 10%;
+}
+
 .as-right h2 {
     text-align: right;
 }
@@ -894,9 +898,14 @@ button:active {
 }
 
 .section-sub {
+    font-size: 130px;
+    line-height: 1.7;
+    font-family: larken, sans-serif;
+}
+
+.section-sub {
     font-size: 20px;
     color: #86c1b5;
-    margin-bottom: 3px;
 }
 
 .section-main {
@@ -914,7 +923,7 @@ button:active {
     display: flex;
     gap: 32px;
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 80px auto 200px;
     align-items: flex-start;
 
 }
@@ -928,7 +937,7 @@ button:active {
 
 .story-nav ol {
     padding: 0;
-    margin: 0;
+    margin-left: 10%;
 }
 
 .story-nav li {
@@ -951,10 +960,13 @@ button:active {
 .story-illust img {
     max-width: 100%;
     height: auto;
+    margin-left: 20%;
 }
 
 .story-text {
     flex: 2;
+    max-width: 40%;
+    margin-right: 5%;
 }
 
 .story-text h2 {
@@ -1019,22 +1031,22 @@ button:active {
 
 /* works-sub.html */
 .works-conpare {
-    position: relative;
-    text-align: center;
     margin-top: 60px;
-}
-
-.works-conpare img {
-    width: 700px;
-    height: auto;
-}
-
-.captions {
     display: flex;
-    justify-content: space-between;
-    margin: 8px auto 0;
-    width: 700px;
+    justify-content: center;
+    gap: 100px;
 }
+
+.work-a {
+    text-align: center;
+}
+
+.work-a img {
+    /* width: 700px; */
+    height: auto;
+
+}
+
 
 .caption-a,
 .caption-b {
@@ -1043,7 +1055,7 @@ button:active {
 
 .works-detail {
     display: flex;
-    gap: 40px;
+    gap: 15px;
     max-width: 1200px;
     margin: 60px auto;
 }
@@ -1064,6 +1076,17 @@ button:active {
     margin: 0 0 15px;
 }
 
+/* 説明 */
+.works-detail {
+    padding: 0 10px;
+}
+
+.works-detail p {
+    width: 80%;
+}
+
+
+
 /* works画像 */
 .works-images {
     display: flex;
@@ -1078,11 +1101,25 @@ button:active {
     display: block;
 }
 
+.works-sample {
+    background: url("../1x/アセット\ 2-80.jpg")no-repeat center center;
+    background-size: cover;
+    padding: 16px;
+    text-align: center;
+    aspect-ratio: 1442/560;
+    box-sizing: border-box;
+    align-items: center;
+}
+
 .works-row {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-bottom: 30px;
+}
+
+.works-item {
+    background: white;
+    padding: 20px;
 }
 
 .works-row img {
@@ -1091,8 +1128,13 @@ button:active {
     display: block;
 }
 
+.white-box {
+    color: white;
+}
+
 .works-btn {
     text-align: center;
+    margin-top: 30px;
 }
 
 .works-btn a {
@@ -1140,6 +1182,72 @@ button:active {
     padding: 12px 0;
     font-size: 14px;
 }
+
+/* コンタクトフォーム */
+.contact-form {
+    max-width: 800px;
+    margin: 24px auto 56px;
+    padding: 0 16px;
+}
+
+.c-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 14px 0;
+    justify-content: center;
+}
+
+.c-label {
+    flex: 0 0 6.5em;
+    text-align: flex-start;
+    font-size: 14px;
+}
+
+.c-form__input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    height: 56px;
+    background: #86c1b5;
+    font-size: 14px;
+
+}
+
+.c-form__input:focus {
+    background: rgba(134, 193, 181, .22);
+    box-shadow: 0 0 0 3px rgba(134, 193, 181, .28);
+}
+
+.c-form__input::placeholder {
+    color: rgba(0, 0, 0, .45);
+}
+
+textarea.c-form__input {
+    min-height: 180px;
+    height: auto;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.c-submit {
+    display: block;
+    width: 100%;
+    margin: 28px 0 0;
+    padding: 16px 20px;
+    border: none;
+    /* color: #fff; */
+    font-size: 14px;
+    cursor: pointer;
+    background-color: 86c1b5;
+}
+
+.c-submit:hover,
+.c-submit:active {
+    filter: brightness(.92);
+}
+
+
 
 /* 文 */
 .vertical-message {

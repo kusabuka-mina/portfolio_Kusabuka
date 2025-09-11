@@ -15,7 +15,7 @@
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
-        <button class="menu">MENU</button>
+        <button id="menuBtn">MENU</button>
     </header>
 
     <!-- お問合せボタン -->
@@ -105,7 +105,7 @@
             </div>
 
             <!-- 右：本文 -->
-            <div class="strengths">
+            <div class="story-text">
                 <h2>揺れる<span>（わたしの強み、個性）</span></h2>
                 <p class="lead">
                     揺れる日々の中で、確かに身についたものがある。これは、私を形づくる<br>
@@ -265,10 +265,10 @@
     </footer>
     <script>
         $(function () {
-            let nav = $('story-nav')
+            let nav = $('.story-nav')
             $(window).on('scroll', function () {
                 let navTop = nav.offset().top
-                $('story').each(function (index) {
+                $('.story').each(function (index) {
                     let sectionTop = $(this).offset().top
                     if (navTop > sectionTop && navTop < sectionTop + $(this).outerHeight()) {
                         nav.find('li').eq(index).addClass('color')

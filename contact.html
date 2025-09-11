@@ -7,13 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
-        <button class="menu">MENU</button>
+        <button id="menuBtn">MENU</button>
     </header>
 
     <!-- お問合せボタン -->
@@ -43,36 +44,95 @@
         </div>
     </section>
 
+    <!-- お問合せフォーム -->
 
-    <!-- 文 -->
-    <div class="vertical-message">
-        この場所から、<br>
-        あなたの世界が<br>
-        ひらきますように。
-    </div>
+    <form class="contact-form" action=" https://docs.google.com/forms/u/0/d/e/1FAIpQLSffCONwYvleuhW3BkeYhfoqXCgZ7PDXvRdyegLyzBUSdVCsFA/formResponse
+" method="POST">
 
-    <!-- フッター -->
-    <footer class="footer">
-        <nav class="footer-nav">
-            <a href="#">コンセプト</a>
-            <a href="#">わたしについて</a>
-            <a href="#">実績について</a>
-            <a href="#">ひらけること</a>
-            <a href="#">お問合せ</a>
-        </nav>
-
-        <div class="footer-logo">
-            Kusabuka | クサブカ
+        <div class="c-row">
+            <div class="c-label">お名前</div>
+            <div class="c-input">
+                <input name="entry.115998867" class="c-form__input" id="field-name" placeholder="山田 太郎" type="text"
+                    required="required" />
+            </div>
         </div>
 
-        <div class="footer-info">
-            <p>［事業形態］個人事業主</p>
-            <p>［事業内容］デザイン/コード</p>
-            <p>［住所］新潟県新潟市</p>
-            <p>［お問合せ] mina.kusabukaa@gmail.com</p>
-        </div>
-    </footer>
 
+        <div class="c-row">
+            <div class="c-label">社名/所属</div>
+            <div class="c-input">
+                <input name="entry.941778390" class="c-form__input" id="field-name" placeholder="社名/所属をご入力ください"
+                    type="text" required="required" />
+            </div>
+        </div>
+
+        <div class="c-row">
+            <div class="c-label">メールアドレス</div>
+            <div class="c-input">
+                <input name="entry.1672982927" class="c-form__input" id="field-name" placeholder="aaaaa@aaaaaa.co.jp"
+                    type="text" required="required" />
+            </div>
+        </div>
+
+        <div class="c-row">
+            <div class="c-label">お問合せ内容</div>
+            <div class="c-input">
+
+                <textarea name="entry.1726417427" class="c-form__input" id="field-message"
+                    placeholder="お問い合わせ内容"></textarea>
+            </div>
+        </div>
+
+        <button class="c-submit" type="submit">入力内容を送信</button>
+
+
+
+
+
+
+
+    </form>
+
+    <!-- thanks -->
+    <form
+        action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe00eJN0CWayVTtmGW0ONrc6MT8bA5no3F9iHgbGwaOm18KRw/formResponse"
+        method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="c-form">
+
+        <!-- 文 -->
+        <div class="vertical-message">
+            この場所から、<br>
+            あなたの世界が<br>
+            ひらきますように。
+        </div>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <nav class="footer-nav">
+                <a href="#">コンセプト</a>
+                <a href="#">わたしについて</a>
+                <a href="#">実績について</a>
+                <a href="#">ひらけること</a>
+                <a href="#">お問合せ</a>
+            </nav>
+
+            <div class="footer-logo">
+                Kusabuka | クサブカ
+            </div>
+
+            <div class="footer-info">
+                <p>［事業形態］個人事業主</p>
+                <p>［事業内容］デザイン/コード</p>
+                <p>［住所］新潟県新潟市</p>
+                <p>［お問合せ] mina.kusabukaa@gmail.com</p>
+            </div>
+        </footer>
+
+
+        <script type="text/javascript">
+            let submitted = false;
+        </script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+            onload="if(submitted){window.location='THANKSページのURL';}"></iframe>
 </body>
 
 </html>
