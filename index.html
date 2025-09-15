@@ -34,15 +34,22 @@
 
     <!-- メニュー -->
     <div id="menu" class="overlay">
-        <button id="closeBtn">CLOSE</button>
+        <header id="fixed-header" class="is-show">
+            <div class="header">
+                <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
+                <button id="closeBtn">CLOSE</button>
+
+            </div>
+        </header>
+
 
         <img src="./1x/歩き出すばら.psd.png" alt="歩き出すバラ" class="menu-illustration">
         <ul>
-            <li><a href="#concept">コンセプト</a></li>
-            <li><a href="#about">わたしについて</a></li>
-            <li><a href="works">実績について</a></li>
-            <li><a href="#open">ひらけること</a></li>
-            <li><a href="#contact">お問合せ</a></li>
+            <li><a href="#">コンセプト</a></li>
+            <li><a href="./about.html">わたしについて</a></li>
+            <li><a href="./works.html">実績について</a></li>
+            <li><a href=".open">ひらけること</a></li>
+            <li><a href="./contact.html">お問合せ</a></li>
         </ul>
     </div>
 
@@ -300,6 +307,12 @@
             const load = document.querySelector('.loading')
             setTimeout(function () {
                 load.classList.add('loaded')
+                window.addEventListener('scroll', () => {
+                    const rootY = document.querySelector('.root').getBoundingClientRect().top
+                    if (window.pageYOffset + window.innerHeight > rootY) {
+                        document.querySelector('.img-wrap').classList.add('move')
+                    }
+                })
                 setTimeout(function () {
                     load.style.display = "none"
                 }, 500)
@@ -321,10 +334,10 @@
             }());
 
         $("#menuBtn").click(function () {
-            $("#menu").fadein();
+            $("#menu").fadeIn();
         });
         $("#closeBtn").click(function () {
-            $('#menu').fadeout();
+            $('#menu').fadeOut();
 
         });
     </script>

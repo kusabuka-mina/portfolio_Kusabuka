@@ -62,18 +62,21 @@
 
 .overlay ul {
     list-style: none;
-    padding: 0;
+    display: inline-block;
+    margin: 215px 7% 300px 60%;
 }
 
 .overlay li {
-    margin: 20px 0;
+    margin: 50px 0;
+    font-size: 30px;
+    color: #86c1b5;
 }
 
 .menu-illustration {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 120px;
+    bottom: 70px;
+    left: 70px;
+    width: 150px;
     height: auto;
 }
 
@@ -183,6 +186,7 @@ button:active {
     box-shadow: none;
     border: none;
     background: none;
+    color: #86c1b5;
 }
 
 
@@ -192,7 +196,7 @@ button:active {
     justify-content: center;
     gap: 42px;
     max-width: 1200px;
-    margin: 300px auto;
+    margin: 300px 4%;
     position: relative;
 }
 
@@ -203,7 +207,7 @@ button:active {
     height: auto;
     position: relative;
     z-index: 2;
-    margin-left: 23%;
+    margin-left: 14%;
 }
 
 .img-wrap div {
@@ -212,13 +216,17 @@ button:active {
 }
 
 .img-wrap::before {
-    animation: img-wrap 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
     background: #fff;
     content: '';
     inset: 0;
     pointer-events: none;
     position: absolute;
     z-index: 1;
+}
+
+.img-wrap.move::before {
+    animation: img-wrap 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes img-wrap {
@@ -237,8 +245,9 @@ button:active {
     z-index: 1;
     pointer-events: none;
     /* opacity: 0; */
-    top: 80%;
+    top: 87%;
     transform: translateY(-24px);
+    left: -3%;
 
 }
 
@@ -257,7 +266,7 @@ button:active {
     color: #8bc2b4;
     text-align: center;
     margin-top: 154px;
-    margin-right: 14%;
+    margin-right: 8%;
 }
 
 /* コンセプト */
@@ -534,7 +543,7 @@ button:active {
     display: flex;
     align-items: flex-start;
     gap: 230px;
-    margin-top: 220px;
+    margin: 220px auto;
 }
 
 .open-illust {
@@ -654,7 +663,7 @@ button:active {
 .contact {
     position: relative;
     text-align: center;
-    margin-top: 270px;
+    margin: 270px auto;
 }
 
 .contact-illust img {
@@ -726,6 +735,7 @@ button:active {
     width: 248px;
     position: absolute;
     top: 30%;
+    left: 7%;
 }
 
 /* 最後の文 */
@@ -921,9 +931,8 @@ button:active {
 /* story */
 .story {
     display: flex;
-    gap: 32px;
     max-width: 1200px;
-    margin: 80px auto 200px;
+    margin: -150px auto 200px;
     align-items: flex-start;
 
 }
@@ -960,21 +969,48 @@ button:active {
 .story-illust img {
     max-width: 100%;
     height: auto;
-    margin-left: 20%;
+    margin-left: 35%;
 }
 
 .story-text {
     flex: 2;
     max-width: 40%;
     margin-right: 5%;
+    margin-bottom: 300px;
 }
 
 .story-text h2 {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .story-text span {
+    font-size: 14px;
+}
+
+.story-text p {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-size: 14px;
+}
+
+.lead {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.block {
+    margin-bottom: 60px;
+
+}
+
+.block h2,
+h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: source-han-sans-japanese, sans-serif;
+}
+
+.block p {
     font-size: 14px;
 }
 
@@ -1007,7 +1043,7 @@ button:active {
     gap: 24px;
 }
 
-.works-item {
+.works-gallery .works-item {
     background: url("../1x/アセット\ 2-80.jpg")no-repeat center center;
     background-size: cover;
     padding: 16px;
