@@ -70,6 +70,17 @@
     margin: 50px 0;
     font-size: 30px;
     color: #86c1b5;
+
+}
+
+.overlay ul li a {
+    color: #86c1b5;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.overlay ul li a:hover {
+    color: #0b4b3f;
 }
 
 .menu-illustration {
@@ -156,6 +167,11 @@
     color: #86c1b5;
 }
 
+#menuBtn:hover {
+    color: #3b6f62;
+    transition: background-color .3s ease;
+}
+
 button {
     outline: none;
     background: #86c1b5;
@@ -194,7 +210,7 @@ button:active {
 .first-view {
     display: flex;
     justify-content: center;
-    gap: 42px;
+    gap: 8%;
     max-width: 1200px;
     margin: 300px 4%;
     position: relative;
@@ -266,16 +282,16 @@ button:active {
     color: #8bc2b4;
     text-align: center;
     margin-top: 154px;
-    margin-right: 8%;
+    margin-right: 6%;
 }
 
 /* コンセプト */
-.concept {
+#concept {
     display: flex;
     flex-direction: row-reverse;
     gap: 97px;
     /* padding: 80px 20% 0 79%; */
-    padding: 90px 10% 0 0;
+    padding: 90px 5% 0 0;
     max-width: 1200px;
 }
 
@@ -340,11 +356,10 @@ button:active {
 /* わたしについて */
 .about {
     display: flex;
-    margin: 364px 8% 0 8%;
+    margin: 364px auto;
     max-width: 1200px;
     align-items: center;
     justify-content: space-between;
-    gap: 13%;
     position: relative;
     overflow: visible;
 }
@@ -352,7 +367,8 @@ button:active {
 .about-left {
     align-items: flex-end;
     display: flex;
-    gap: 31px;
+    gap: 5%;
+    width: 40%;
 }
 
 .about-texts {
@@ -407,8 +423,8 @@ button:active {
 .about-right {
     flex-shrink: 0;
     z-index: 1;
-    width: 50%;
-    margin: 0 auto;
+    width: 43%;
+    /* margin: 0 auto; */
 }
 
 
@@ -422,7 +438,7 @@ button:active {
 
 .about-right img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     opacity: 1;
 }
@@ -538,7 +554,7 @@ button:active {
 }
 
 /* ひらけること */
-.open {
+#open {
     max-width: 1200px;
     display: flex;
     align-items: flex-start;
@@ -724,10 +740,11 @@ button:active {
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: 14px;
-    padding-top: 37px;
+    padding: 37px;
     color: #89c8bd;
     margin: 0 auto;
     text-align: start;
+    line-height: 1.7;
 }
 
 .contact-illust img {
@@ -899,6 +916,7 @@ button:active {
 
 .as-right p {
     text-align: right;
+    margin-top: 10px;
 }
 
 /* about */
@@ -961,6 +979,7 @@ button:active {
 
 .story-illust {
     flex: 1;
+
     text-align: center;
     position: sticky;
     top: 50px;
@@ -970,12 +989,13 @@ button:active {
     max-width: 100%;
     height: auto;
     margin-left: 35%;
+
 }
 
 .story-text {
     flex: 2;
     max-width: 40%;
-    margin-right: 5%;
+    margin-right: 10px;
     margin-bottom: 300px;
 }
 
@@ -991,6 +1011,7 @@ button:active {
 .story-text p {
     font-family: source-han-sans-japanese, sans-serif;
     font-size: 14px;
+    line-height: 2.1;
 }
 
 .lead {
@@ -1013,6 +1034,148 @@ h3 {
 .block p {
     font-size: 14px;
 }
+
+@media (min-width:768px) {
+    .toc {
+        display: none;
+    }
+}
+
+:root {
+    --deep-green: #0f3c34;
+    /* 深い緑（目次ボタン色） */
+    --mint: #86c1b5;
+    /* あなたのフォーム色に近い */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== 目次：FAB + ボトムシート ===== */
+.toc {
+    position: fixed;
+    inset: auto 16px 16px auto;
+    z-index: 1000;
+}
+
+.toc__fab {
+    appearance: none;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 14px;
+    color: #86c1b5;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.toc__fab:active {
+    transform: translateY(1px);
+}
+
+/* 背景の薄暗幕 */
+.toc__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+}
+
+/* 下から出るパネル */
+.toc__panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .18);
+    max-height: 70vh;
+    padding: 16px 20px;
+    transform: translateY(100%);
+    transition: transform .25s ease;
+}
+
+.toc__panel.is-open {
+    transform: translateY(0%);
+}
+
+/* パネル内 */
+.toc__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toc__header span {
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+.toc__close {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.toc__list {
+    margin: 12px 0 0;
+    padding: 0 2px 8px 18px;
+}
+
+.toc__list a {
+    display: block;
+    padding: 10px 2px;
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+}
+
+.toc__list a:active {
+    background: rgba(134, 193, 181, .18);
+}
+
+.toc__fab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+/* 下線 */
+.toc__fab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #86c1b5;
+}
+
+/* 矢印 */
+.toc__fab .arrow {
+    font-size: 0.85em;
+    transform: translateY(2px);
+}
+
+/* デスクトップでは非表示（必要なら表示にしてOK） */
+@media (min-width: 768px) {
+
+    .toc,
+    .toc__backdrop,
+    .toc__panel {
+        display: none;
+    }
+}
+
 
 /* works */
 .works-title {
@@ -1047,22 +1210,43 @@ h3 {
     background: url("../1x/アセット\ 2-80.jpg")no-repeat center center;
     background-size: cover;
     padding: 16px;
-    text-align: center;
+    display: grid;
+    place-items: center;
     aspect-ratio: 367/223;
     box-sizing: border-box;
 }
 
 .works-item a {
-    display: block;
+    display: grid;
     height: 100%;
+    width: 100%;
+    place-items: center;
 }
 
 
-.works-item img {
+/* .works-item img {
     max-width: 264px;
-    height: 100%;
+    height: 80%;
     display: block;
     margin: 0 auto;
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+} */
+
+.work-media {
+    width: 90%;
+    aspect-ratio: 2/9;
+    place-items: center;
+}
+
+.work-media img {
+    width: 100%;
+    height: 13%;
+    object-fit: contain;
+    display: block;
 }
 
 /* works-sub.html */
@@ -1070,7 +1254,7 @@ h3 {
     margin-top: 60px;
     display: flex;
     justify-content: center;
-    gap: 100px;
+    padding: 0 10px;
 }
 
 .work-a {
@@ -1083,6 +1267,16 @@ h3 {
 
 }
 
+.works-conpare img {
+    height: auto;
+    width: 55%;
+}
+
+.works-conpare .baner-trese {
+    width: 20%;
+}
+
+
 
 .caption-a,
 .caption-b {
@@ -1091,34 +1285,44 @@ h3 {
 
 .works-detail {
     display: flex;
-    gap: 15px;
+    gap: 12%;
     max-width: 1200px;
     margin: 60px auto;
 }
 
+.design-description {
+    width: 47%;
+}
+
+.design-commentary {
+    width: 39%
+}
+
+
+
 .works-detail h3 {
     font-size: 18px;
     margin: 20px 0 10px;
+    font-family: source-han-sans-japanese, sans-serif;
 }
 
 .works-detail h4 {
     font-size: 14px;
     margin: 15px 0 8px;
+    display: block;
+    font-family: source-han-sans-japanese, sans-serif;
 }
 
 .works-detail p {
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 2;
     margin: 0 0 15px;
+    font-family: source-han-sans-japanese, sans-serif;
 }
 
 /* 説明 */
 .works-detail {
-    padding: 0 10px;
-}
-
-.works-detail p {
-    width: 80%;
+    padding: 0 5%;
 }
 
 
@@ -1128,11 +1332,11 @@ h3 {
     display: flex;
     gap: 50px;
     justify-content: center;
-    margin: 40px 0;
+    margin: 160px 10%;
 }
 
 .works-images img {
-    width: 45%;
+    /* width: 45%; */
     height: auto;
     display: block;
 }
@@ -1141,28 +1345,45 @@ h3 {
     background: url("../1x/アセット\ 2-80.jpg")no-repeat center center;
     background-size: cover;
     padding: 16px;
-    text-align: center;
-    aspect-ratio: 1442/560;
+    aspect-ratio: 1442/443;
     box-sizing: border-box;
-    align-items: center;
 }
 
 .works-row {
     display: flex;
+    gap: 3%;
+    margin: 0 auto;
     justify-content: center;
-    gap: 40px;
 }
 
 .works-item {
     background: white;
-    padding: 20px;
+    margin-top: 70px;
+    width: 370px;
+    height: 230px;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.works-item:hover {
+    transform: scale(1.03);
+    filter: grayscale(60%) brightness(0.9);
+    opacity: 0.9;
 }
 
 .works-row img {
-    max-width: 250px;
     height: auto;
     display: block;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 0;
+    object-fit: cover;
 }
+
 
 .white-box {
     color: white;
@@ -1170,7 +1391,12 @@ h3 {
 
 .works-btn {
     text-align: center;
-    margin-top: 30px;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+.works-btn a:hover {
+    background-color: #b0cfc4;
 }
 
 .works-btn a {
@@ -1181,6 +1407,11 @@ h3 {
     border-radius: 24px;
     text-decoration: none;
     font-size: 20px;
+    /* margin: 20px auto; */
+
+    .postcard {
+        width: 45%
+    }
 }
 
 /* contact */
@@ -1189,27 +1420,18 @@ h3 {
     margin: 140px auto;
 }
 
-.contact-title {
-    font-size: 130px;
-    line-height: 1.75;
-    color: #86c1b5;
-    font-family: larken, sans-serif;
-}
 
-.contact-sub {
-    font-size: 20px;
-    line-height: 1.75;
-    color: #86c1b5;
-}
-
-.contact2-text {
+.contact-message {
     font-size: 14px;
     line-height: 2.8;
-    max-width: 800px;
+    margin: 0 auto 115px;
+    width: 72%;
+    text-align: left;
+    max-width: 760px;
 }
 
-.contact2-text p {
-    margin-bottom: 20px;
+.contact-message p {
+    margin-bottom: 50px;
 }
 
 .sns {
@@ -1221,41 +1443,67 @@ h3 {
 
 /* コンタクトフォーム */
 .contact-form {
-    max-width: 800px;
+    max-width: 100%;
     margin: 24px auto 56px;
     padding: 0 16px;
+    width: 730px;
 }
 
 .c-row {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    gap: 20%;
     margin: 14px 0;
     justify-content: center;
 }
 
 .c-label {
-    flex: 0 0 6.5em;
-    text-align: flex-start;
+    flex: 0 0 120px;
     font-size: 14px;
+    white-space: nowrap;
 }
 
-.c-form__input {
+.c-input {
     width: 100%;
     box-sizing: border-box;
     padding: 14px 16px;
     height: 56px;
-    background: #86c1b5;
+    background: rgba(134, 193, 181, 0.5);
     font-size: 14px;
+    border: none;
+
 
 }
 
-.c-form__input:focus {
-    background: rgba(134, 193, 181, .22);
-    box-shadow: 0 0 0 3px rgba(134, 193, 181, .28);
+.c-input::placeholder {
+    color: rgba(0, 0, 0, rgba(0, 0, 0, .45))
 }
 
-.c-form__input::placeholder {
+.ct-input {
+    min-height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    height: 56px;
+    background: rgba(134, 193, 181, 0.5);
+    font-size: 14px;
+    border: none;
+}
+
+.c-form__input {
+    background: none;
+    border: none;
+}
+
+
+
+
+.c-input:focus {
+    background: rgba(134, 193, 181, 0.38);
+    box-shadow: 0 0 0 2px rgba(134, 193, 181, 0.30);
+    outline: none;
+}
+
+.c-input::placeholder {
     color: rgba(0, 0, 0, .45);
 }
 
@@ -1264,18 +1512,19 @@ textarea.c-form__input {
     height: auto;
     resize: vertical;
     line-height: 1.6;
+    width: 100%;
 }
 
 .c-submit {
     display: block;
-    width: 100%;
-    margin: 28px 0 0;
+    width: 50%;
+    margin: 102px auto 180px;
     padding: 16px 20px;
-    border: none;
-    /* color: #fff; */
+    /* border: 2px solid  */
+    color: #fff;
     font-size: 14px;
     cursor: pointer;
-    background-color: 86c1b5;
+    background-color: #86c1b5;
 }
 
 .c-submit:hover,
@@ -1293,7 +1542,7 @@ textarea.c-form__input {
     line-height: 1.75;
     color: #89c8bd;
     text-align: start;
-    margin: 60px auto;
+    margin: 0 auto 180px;
 }
 
 /* バラちゃん図鑑 */
@@ -1317,10 +1566,10 @@ textarea.c-form__input {
 /* ストーリー */
 
 .rose {
-    margin: 140px auto;
+    margin: 200px auto;
     position: relative;
     max-width: 1200px;
-    height: 400px;
+    height: 500px;
 }
 
 
@@ -1347,14 +1596,14 @@ textarea.c-form__input {
 
 .rose-text {
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 2;
 }
 
 .toge {
-    margin: 140px auto;
+    margin: 250px auto;
     position: relative;
     max-width: 1200px;
-    height: 1800px;
+    height: 2000px;
 }
 
 .rose-2 {
@@ -1372,6 +1621,23 @@ textarea.c-form__input {
     width: 15%;
     height: auto;
 }
+
+.open-mouth-left {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 15%;
+    height: auto;
+}
+
+.open-mouth-right {
+    position: absolute;
+    left: 76%;
+    top: 55%;
+    width: 15%;
+    height: auto;
+}
+
 
 .rose-4 {
     position: absolute;
@@ -1408,12 +1674,47 @@ textarea.c-form__input {
 .rose-8 {
     position: absolute;
     left: 16%;
-    top: 120%;
+    top: 60%;
     width: 12%;
     height: auto;
 }
 
+.mouth-wisper {
+    position: absolute;
+    left: 83%;
+    top: 16%;
+    width: 12%;
+    height: auto;
+}
 
+.mouth-bite {
+    position: absolute;
+    left: 15%;
+    top: 14%;
+    width: 12%;
+    height: auto;
+}
+
+.ash {
+    text-align: center;
+}
+
+.ash-ember {
+    width: 12%;
+    height: auto;
+    margin: 0 auto 500px;
+
+}
+
+.book-contact {
+    position: relative;
+    text-align: center;
+    margin: 570px auto 270px;
+}
+
+.br-sp {
+    display: none;
+}
 
 /* レスポンシブ対応 */
 @media screen and (max-width:767px) {
@@ -1447,11 +1748,23 @@ textarea.c-form__input {
     }
 
     .kusabuka-en {
-        font-size: 10px;
+        font-size: 12px;
+    }
+
+    #menuBtn {
+        font-size: 20px;
     }
 
     .menu {
-        font-size: 12px;
+        font-size: 20px;
+    }
+
+    #closeBtn {
+        font-size: 20px;
+    }
+
+    #menu li {
+        font-size: 20px;
     }
 
     /* ファーストビュー */
@@ -1616,12 +1929,12 @@ textarea.c-form__input {
     }
 
     .contact-main {
-        font-size: 14px;
+        font-size: 22px;
     }
 
     .contact-sub {
-        font-size: 8px;
-        color: #251e1c;
+        font-size: 13px;
+        /* color: #251e1c; */
     }
 
     .contact-btn {
@@ -1657,11 +1970,155 @@ textarea.c-form__input {
         align-items: left;
         gap: 12px;
         display: block;
+        margin: 0;
     }
 
+    /* book.html */
 
 
+    .barachan-title {
+        margin-top: 45px;
+        margin-bottom: 0;
+    }
 
+    .barachan-title h1 {
+        font-size: 35px;
+    }
 
+    .barachan-sub {
+        font-size: 12px;
+    }
+
+    .rose {
+        margin: 35px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+    }
+
+    .rose-1 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 20%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .rose-body {
+        max-width: 100%;
+        margin: 0 auto;
+        position: static;
+        left: auto;
+        top: auto;
+        width: 77%;
+        height: auto;
+    }
+
+    .rose-title {
+        font-size: 20px;
+        text-align: flex-start;
+    }
+
+    .rose-text {
+        font-size: 12px;
+    }
+
+    .rose-2 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 25%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .rose-3 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 28%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .toge {
+        margin: 100px auto;
+        height: auto;
+    }
+
+    .toge img {
+        display: none;
+    }
+
+    .rose-4 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 36%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .rose-5 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 38%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .rose-6 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 37%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .rose-7 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 35%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .rose-8 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 23%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .book-contact {
+        margin: 0 auto;
+    }
+
+    .br-sp {
+        display: block;
+    }
+
+    .contact-main {
+        font-size: 18px;
+    }
+
+    .contact-sub {
+        font-size: 12px;
+        line-height: 2;
+        color: none;
+
+    }
+
+    .vertical-text {
+        font-size: 12px;
+    }
 
 }

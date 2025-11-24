@@ -4,12 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kusabuka</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/.workssub.html">
+    <link rel="icon" href="./1x/1x/favicon/favicon (4).ico">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'bsy2ilo',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <!-- メニュー -->
+    <div id="menu" class="overlay">
+        <header id="fixed-header" class="is-show">
+            <div class="header">
+                <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
+                <button id="closeBtn">CLOSE</button>
+
+            </div>
+        </header>
+
+
+        <img src="./1x/walk.rose.png" alt="歩き出すバラ" class="menu-illustration">
+        <ul>
+            <li><a href="./index.html#concept">コンセプト</a></li>
+            <li><a href="./about.html">わたしについて</a></li>
+            <li><a href="./works.html">実績について</a></li>
+            <li><a href="./index.html#open">ひらけること</a></li>
+            <li><a href="./contact.html">お問合せ</a></li>
+        </ul>
+    </div>
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
@@ -18,10 +51,10 @@
 
     <!-- お問合せボタン -->
     <div class="contact-fixed">
-        <a href="#contact" class="x-btn">
+        <a href="./contact.html" class="x-btn">
             お問合せ
         </a>
-        <img src="./1x/はじまりのばら.psd.png" alt="rose" class="x-illust">
+        <img src="./1x/start-rose.png" alt="rose" class="x-illust">
     </div>
 
     <div class="works-title">
@@ -32,67 +65,93 @@
     <!-- 作品一覧 -->
     <section class="works-gallery">
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="./workssub.html/web-portfolio.html">
                 <img src="./1x/ポートフォリオモックアップ.psd.png" alt="work1">
             </a>
         </div>
 
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/web-workers.html">
                 <img src="./1x/SPモックアップ.psd.png" alt="work2">
             </a>
         </div>
 
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/web-cafecode.html">
                 <img src="./1x/HPモックアップ.psd.png" alt="work3">
             </a>
         </div>
 
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/web-hairsalon.html">
                 <img src="./1x/LPPCモックアップ.psd.png" alt="work4"></a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/web-burger-premium.html">
                 <img src="./1x/アセット 21.png" alt="work5"> </a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/web-burger-pop.html">
                 <img src="./1x/アセット 22.png" alt="works6">
             </a>
         </div>
 
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/web-gakuwariplan.html">
                 <img src="./1x/バナーモックアップトレース.psd.png" alt="works7">
             </a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/logo-ruit.html">
                 <img src="./1x/ruitロゴモックアップ.psd-80.jpg" alt="works8">
             </a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/chirashi-burgermenu.html">
                 <img src="./1x/ハンバーガーチラシ.psd-80.jpg" alt="work9">
             </a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/card-healing.html">
                 <img src="./1x/歯科衛生士名刺モックアップ.psd-80.jpg" alt="works10">
             </a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/card.onigiri.html">
                 <img src="./1x/おにぎりやカードモックアップ.psd-80.jpg" alt="works11">
             </a>
         </div>
         <div class="works-item">
-            <a href="works-sub.html">
+            <a href="workssub.html/card-blue.html">
                 <img src="./1x/gravis名刺モックアップ.psd-80.jpg" alt="work12">
             </a>
         </div>
+
+        <div class="works-item">
+            <a href="workssub.html/card-hari.html">
+                <span class="work-media">
+                    <img src="./1x/300ppi/恵太朗名刺モックアップ.psd@300x-80.jpg" alt="work13">
+                </span>
+            </a>
+        </div>
+
+        <div class="works-item">
+            <a href="workssub.html/poster-shodo2.html">
+                <span class="work-media">
+                    <img src="./1x/300ppi/新大祭ポスターモックアップ.psd@300x-80.jpg" alt="work14">
+                </span>
+            </a>
+        </div>
+
+        <div class="works-item">
+            <a href="workssub.html/postcard-shodo.html">
+                <span class="work-media">
+                    <img src="./1x/300ppi/青嵐展モックアップ.psd@300x-80.jpg" alt="work15">
+                </span>
+            </a>
+        </div>
+
+
     </section>
 
 
@@ -120,10 +179,10 @@
                     ご相談・ご依頼お待ちしております。
                 </p>
                 <p class="contact-sub">
-                    揺れを大切にする感性と、親身に寄り添う力が強みです。無料でご相談・お見積りいたします。
+                    揺れを大切にする感性と、親身に寄り添う力が強みです。<span class="br-sp"></span>無料でご相談・お見積りいたします。
                 </p>
 
-                <a href="#" class="contact-btn">お問合せフォームはこちら</a>
+                <a href="./contact.html" class="contact-btn">お問合せフォームはこちら</a>
                 <p class="vertical-text">
                     この場所から、<br>
                     あなたの世界が<br>
@@ -136,11 +195,11 @@
     <!-- フッター -->
     <footer class="footer">
         <nav class="footer-nav">
-            <a href="#">コンセプト</a>
-            <a href="#">わたしについて</a>
-            <a href="#">実績について</a>
-            <a href="#">ひらけること</a>
-            <a href="#">お問合せ</a>
+            <a href="./index.html#concept">コンセプト</a>
+            <a href="./about.html">わたしについて</a>
+            <a href="./works.html">実績について</a>
+            <a href="./index.html#open">ひらけること</a>
+            <a href="./contact.html">お問合せ</a>
         </nav>
 
         <div class="footer-logo">
@@ -155,7 +214,30 @@
         </div>
     </footer>
 
+    <script>
+        (function () {
+            const fh = document.getElementById('fixed-header');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 200) {
+                    fh.classList.remove('is-show');
+                } else {
+                    fh.classList.add('is-show');
+                }
+            });
+        }());
 
+        $("#menuBtn").click(function () {
+            $("#menu").fadeIn();
+        });
+        $("#closeBtn").click(function () {
+            $('#menu').fadeOut();
+
+        });
+
+        $("#menu a").click(function () {
+            $("#menu").fadeOut();
+        });
+    </script>
 </body>
 
 </html>

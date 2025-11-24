@@ -7,7 +7,7 @@
     <title>Kusabuka</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./1x/favicon (1).ico">
+    <link rel="icon" href="./1x/1x/favicon/favicon (4).ico">
     <script>
         (function (d) {
             var config = {
@@ -45,10 +45,10 @@
 
         <img src="./1x/walk.rose.png" alt="歩き出すバラ" class="menu-illustration">
         <ul>
-            <li><a href="#">コンセプト</a></li>
+            <li><a href="#concept">コンセプト</a></li>
             <li><a href="./about.html">わたしについて</a></li>
             <li><a href="./works.html">実績について</a></li>
-            <li><a href=".open">ひらけること</a></li>
+            <li><a href="#open">ひらけること</a></li>
             <li><a href="./contact.html">お問合せ</a></li>
         </ul>
     </div>
@@ -75,7 +75,7 @@
     </div>
 
     <!-- コンセプト -->
-    <section class="concept concept-main">
+    <section id="concept">
         <div class="concept-box">
             <p class="kana">くさぶか</p>
             <p class="concept-title">草深く、ひらく。</p>
@@ -186,7 +186,7 @@
     </section>
 
     <!-- ひらけること -->
-    <section class="open">
+    <section id="open">
         <div class="open-illust">
             <img src="./1x/アセット 9.png" alt="倒れるバラ">
         </div>
@@ -243,7 +243,7 @@
                     ご相談・ご依頼お待ちしております。
                 </p>
                 <p class="contact-sub">
-                    揺れを大切にする感性と、親身に寄り添う力が強みです。無料でご相談・お見積りいたします。
+                    揺れを大切にする感性と、親身に寄り添う力が強みです。<span class="br-sp"></span>無料でご相談・お見積りいたします。
                 </p>
 
                 <a href="./contact.html" class="contact-btn">お問合せフォームはこちら</a>
@@ -273,10 +273,10 @@
     <!-- フッター -->
     <footer class="footer">
         <nav class="footer-nav">
-            <a href="#">コンセプト</a>
+            <a href="#concept">コンセプト</a>
             <a href="./about.html">わたしについて</a>
             <a href="./works.html">実績について</a>
-            <a href=".open">ひらけること</a>
+            <a href="#open">ひらけること</a>
             <a href="./contact.html">お問合せ</a>
         </nav>
 
@@ -339,6 +339,10 @@
         $("#closeBtn").click(function () {
             $('#menu').fadeOut();
 
+        });
+
+        $("#menu a").click(function () {
+            $("#menu").fadeOut();
         });
     </script>
 

@@ -4,12 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kusabuka</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./1x/1x/favicon/favicon (4).ico">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'bsy2ilo',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <!-- メニュー -->
+    <div id="menu" class="overlay">
+        <header id="fixed-header" class="is-show">
+            <div class="header">
+                <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
+                <button id="closeBtn">CLOSE</button>
+
+            </div>
+        </header>
+
+
+        <img src="./1x/walk.rose.png" alt="歩き出すバラ" class="menu-illustration">
+        <ul>
+            <li><a href="./index.html#concept">コンセプト</a></li>
+            <li><a href="./about.html">わたしについて</a></li>
+            <li><a href="./works.html">実績について</a></li>
+            <li><a href="./index.html#open">ひらけること</a></li>
+            <li><a href="./contact.html">お問合せ</a></li>
+        </ul>
+    </div>
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
@@ -18,7 +50,7 @@
 
     <!-- お問合せボタン -->
     <div class="contact-fixed">
-        <a href="#contact" class="x-btn">
+        <a href="./contact.html" class="x-btn">
             お問合せ
         </a>
         <img src="./1x/start-rose.png" alt="rose" class="x-illust">
@@ -84,6 +116,9 @@
 
     <!-- トゲ -->
     <div class="toge">
+        <img src="./1x/SVG/口2.psd.svg" alt="開いた口" class="open-mouth-left">
+        <img src="./1x/SVG/口2.psd.svg" alt="開いた口" class="open-mouth-right">
+
 
         <div class="rose-body">
             <h2 class="rose-title">トゲ</h2>
@@ -199,18 +234,19 @@
 
         <div class="rose-body">
             <h2 class="rose-title">一緒に歩くばら</h2>
-            <p class="rose-text">終わらない夜を、何度もくぐった。<br>
-                光のない場所で零れたかけらを、形のわからないまま編み直す。<br>
-                生まれた輪郭は、いつも少し他人の顔をしていた。<br>
-                そのままでは生きられないと、笑いながら自分を作り替えていく。<br>
-                あぁ、滑稽だ。<br>
-                誰もが作り物で生きていると信じて、それを当然のように押し付けるくせに、<br>
-                この断層の深さを覗こうともしない。<br>
-                触れ方を変えるしかなかった。<br>
-                重すぎる言葉も、沈む感情も、風のかたちに整えながら、誰のせいにもせず立ち上がる。<br>
-                残るのは、<br>
-                空洞と、<br>
-                作り続ける手だけ。</p>
+            <p class="rose-text">ある朝、私は花びらの縁で眠る声を聴いた。<br>
+                かすかで、しかし図々しいほどに「ここにいる」と告げる声。<br>
+                私は世界を均し、道を作った。<br>
+                あの子が転ばぬように、景色が崩れぬように。<br>
+                生活はすべて仕事だった。<br>
+                まるで奴隷のように、あの子の笑顔のために日を回す。<br>
+                わがままは風のように吹き、私はただ歩幅を合わせる。<br>
+                ひとりで歩くふりをしながら、影を包み、光を差し出す。<br>
+                それでいい。<br>
+                あの子が楽しそうに生きられるなら。<br>
+                たとえその道が、<br>
+                私の足跡をすり減らしていくとしても。
+            </p>
         </div>
     </div>
 
@@ -261,9 +297,9 @@
         </div>
     </div>
 
-    <!-- トゲ -->
+    <!-- 星屑 -->
     <div class="toge">
-
+        <img src="./1x/SVG/口3.psd.svg" alt="ささやきの口" class="mouth-wisper">
         <div class="rose-body">
             <h2 class="rose-title">星屑</h2>
             <p class="rose-text">世界が爪を立ててくる。<br>
@@ -342,6 +378,88 @@
         </div>
     </div>
 
+    <!-- 咲く前の灰 -->
+    <div class="toge">
+        <img src="./1x/SVG/口1.psd.svg" alt="噛む口" class="mouth-bite">
+        <img src="./1x/SVG/口2.psd.svg" alt="開いた口" class="open-mouth-right">
+
+        <div class="rose-body">
+            <h2 class="rose-title">咲く前の灰</h2>
+            <p class="rose-text">
+                最低だ。最低だ。<br>
+                そう唱えれば、まだ呼吸ができた。<br>
+                自分を呪い、世界を呪い、<br>
+                それでようやく、均衡がとれた。<br>
+                <br>
+                この胸は焼け焦げ、<br>
+                皮膚の下で理性が泡立ち、<br>
+                正気と狂気の境界が、熱で溶けて混ざり合う。<br>
+                <br>
+                自分をたたき割った。<br>
+                罵倒で血を吐き、赦しの代わりに毒を飲んだ。<br>
+                怒りだけが、唯一の酸素だった。<br>
+                <br>
+                批判は祈りのようで、罵りは呼吸のようだった。<br>
+                壊すことでしか、形を保てなかった。<br>
+                崩壊は、救済のふりをして微笑んだ。<br>
+                <br>
+                正しさなんて、燃やしてしまえ。<br>
+                燃え残った灰の方が、ずっとまっすぐ、生きている。<br>
+                今もなお、笑うように燃えている炎たちは、きれいなまま、歪んでいる。<br>
+                <br>
+                狂気を抱えて私が動くたび、<br>
+                誰かはその揺れに乗って利益を得た。<br>
+                誰かは私の燃えかすで、暖をとった。<br>
+                <br>
+                私は愛した。<br>
+                だが、愛は紙一枚で裂けた。<br>
+                <br>
+                やさしさは嘲られ、<br>
+                本気は笑われ、<br>
+                覚悟は、<br>
+                声の大きい誰かに塗りつぶされた。<br>
+                <br>
+                悔しかった。<br>
+                許せなかった。<br>
+                <br>
+                それでも、まだ差し出してしまう。<br>
+                言葉の先に、誰かが生きる余地があるのなら。<br>
+                私の中に灯る火が、誰かの夜を照らすのなら。<br>
+                <br>
+                強さじゃない。<br>
+                やさしさでもない。<br>
+                美談でもない。<br>
+                <br>
+                灰を撒いて、花を咲かせる。<br>
+                毒を注いで、光を通す。<br>
+                <br>
+                私が信じた「椅子」は、まだ完成しない。<br>
+                居場所は、まだ途中のまま。<br>
+                でも未完成でも、どんなに脆くても、<br>
+                この震えはたしかに、「生きている」証だった。<br>
+                <br>
+                まだ、戦っている。<br>
+                倒れて、転んで、それでも手を伸ばす。<br>
+                <br>
+                そして今、<br>
+                <br>
+                <br>
+                花が咲きそうだ。<br>
+                いつか、この灰から。<br>
+                <br>
+                <br>
+                そう思った。
+            </p>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
 
 
 
@@ -354,8 +472,11 @@
 
 
     <!-- お問合せ -->
-    <section class="contact">
+    <section class="book-contact">
         <div class="contact-inner">
+
+
+
 
 
             <div class="contact-texts">
@@ -363,27 +484,27 @@
                     ご相談・ご依頼お待ちしております。
                 </p>
                 <p class="contact-sub">
-                    揺れを大切にする感性と、親身に寄り添う力が強みです。無料でご相談・お見積りいたします。
+                    揺れを大切にする感性と、親身に寄り添う力が強みです。<span class="br-sp"></span>無料でご相談・お見積りいたします。
                 </p>
 
-                <a href="#" class="contact-btn">お問合せフォームはこちら</a>
+                <a href="./contact.html" class="contact-btn">お問合せフォームはこちら</a>
                 <p class="vertical-text">
                     この場所から、<br>
                     あなたの世界が<br>
                     ひらきますように。
                 </p>
             </div>
-        </div>
+
     </section>
 
     <!-- フッター -->
     <footer class="footer">
         <nav class="footer-nav">
-            <a href="#">コンセプト</a>
-            <a href="#">わたしについて</a>
-            <a href="#">実績について</a>
-            <a href="#">ひらけること</a>
-            <a href="#">お問合せ</a>
+            <a href="./index.html#concept">コンセプト</a>
+            <a href="./about.html">わたしについて</a>
+            <a href="./works.html">実績について</a>
+            <a href="./index.html#open">ひらけること</a>
+            <a href="./contact.html">お問合せ</a>
         </nav>
 
         <div class="footer-logo">
@@ -405,7 +526,30 @@
 
 
 
+    <script>
+        (function () {
+            const fh = document.getElementById('fixed-header');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 200) {
+                    fh.classList.remove('is-show');
+                } else {
+                    fh.classList.add('is-show');
+                }
+            });
+        }());
 
+        $("#menuBtn").click(function () {
+            $("#menu").fadeIn();
+        });
+        $("#closeBtn").click(function () {
+            $('#menu').fadeOut();
+
+        });
+
+        $("#menu a").click(function () {
+            $("#menu").fadeOut();
+        });
+    </script>
 </body>
 
 </html>

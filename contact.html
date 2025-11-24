@@ -4,13 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kusabuka</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./1x/1x/favicon/favicon (4).ico">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'bsy2ilo',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <!-- メニュー -->
+    <div id="menu" class="overlay">
+        <header id="fixed-header" class="is-show">
+            <div class="header">
+                <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
+                <button id="closeBtn">CLOSE</button>
+
+            </div>
+        </header>
+
+
+        <img src="./1x/walk.rose.png" alt="歩き出すバラ" class="menu-illustration">
+        <ul>
+            <li><a href="./index.html#concept">コンセプト</a></li>
+            <li><a href="./about.html">わたしについて</a></li>
+            <li><a href="./works.html">実績について</a></li>
+            <li><a href="./index.html#open">ひらけること</a></li>
+            <li><a href="./contact.html">お問合せ</a></li>
+        </ul>
+    </div>
+
     <!-- ヘッダー -->
     <header class="header">
         <div class="logo"><span class="kusabuka-ja">草深</span><span class="kusabuka-en">Kusabuka</span></div>
@@ -19,19 +51,19 @@
 
     <!-- お問合せボタン -->
     <div class="contact-fixed">
-        <a href="#contact" class="x-btn">
+        <a href="./contact.html" class="x-btn">
             お問合せ
         </a>
-        <img src="./1x/はじまりのばら.psd.png" alt="rose" class="x-illust">
+        <img src="./1x/start-rose.png" alt="rose" class="x-illust">
     </div>
 
     <!-- 見出し -->
-    <div class="contact-sectoin">
-        <h2 class="contact-title">Contact</h2>
-        <p class="contact-sub">お問合せフォーム</p>
+    <div class="contact-section">
+        <h2 class="section-main">Contact</h2>
+        <p class="section-sub">お問合せフォーム</p>
     </div>
 
-    <section class="contact2-text">
+    <section class="contact-message">
         <p>各種ご依頼やお問合せ、制作料金のご相談・ご質問など、お気軽にこちらのフォームよりご送信ください。<br>
             2営業日以内でお返事させていただきます。<br>
             必須項目が付いている項目はお手数ですが、必ずご入力をお願いいたします。<br>
@@ -76,7 +108,7 @@
 
         <div class="c-row">
             <div class="c-label">お問合せ内容</div>
-            <div class="c-input">
+            <div class="ct-input">
 
                 <textarea name="entry.1726417427" class="c-form__input" id="field-message"
                     placeholder="お問い合わせ内容"></textarea>
@@ -96,43 +128,70 @@
     <!-- thanks -->
     <form
         action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe00eJN0CWayVTtmGW0ONrc6MT8bA5no3F9iHgbGwaOm18KRw/formResponse"
-        method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="c-form">
+        method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="c-form"></form>
 
-        <!-- 文 -->
-        <div class="vertical-message">
-            この場所から、<br>
-            あなたの世界が<br>
-            ひらきますように。
+    <!-- 文 -->
+    <div class="vertical-message">
+        この場所から、<br>
+        あなたの世界が<br>
+        ひらきますように。
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <nav class="footer-nav">
+            <a href="./index.html#concept">コンセプト</a>
+            <a href="./about.html">わたしについて</a>
+            <a href="./works.html">実績について</a>
+            <a href="./index.html#open">ひらけること</a>
+            <a href="./contact.html">お問合せ</a>
+        </nav>
+
+        <div class="footer-logo">
+            Kusabuka | クサブカ
         </div>
 
-        <!-- フッター -->
-        <footer class="footer">
-            <nav class="footer-nav">
-                <a href="#">コンセプト</a>
-                <a href="#">わたしについて</a>
-                <a href="#">実績について</a>
-                <a href="#">ひらけること</a>
-                <a href="#">お問合せ</a>
-            </nav>
-
-            <div class="footer-logo">
-                Kusabuka | クサブカ
-            </div>
-
-            <div class="footer-info">
-                <p>［事業形態］個人事業主</p>
-                <p>［事業内容］デザイン/コード</p>
-                <p>［住所］新潟県新潟市</p>
-                <p>［お問合せ] mina.kusabukaa@gmail.com</p>
-            </div>
-        </footer>
+        <div class="footer-info">
+            <p>［事業形態］個人事業主</p>
+            <p>［事業内容］デザイン/コード</p>
+            <p>［住所］新潟県新潟市</p>
+            <p>［お問合せ] mina.kusabukaa@gmail.com</p>
+        </div>
+    </footer>
 
 
-        <script type="text/javascript">
-            let submitted = false;
-        </script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
-            onload="if(submitted){window.location='THANKSページのURL';}"></iframe>
+
+
+    <script type="text/javascript">
+        let submitted = false;
+
+
+
+        (function () {
+            const fh = document.getElementById('fixed-header');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 200) {
+                    fh.classList.remove('is-show');
+                } else {
+                    fh.classList.add('is-show');
+                }
+            });
+        }());
+
+        $("#menuBtn").click(function () {
+            $("#menu").fadeIn();
+        });
+        $("#closeBtn").click(function () {
+            $('#menu').fadeOut();
+
+        });
+
+        $("#menu a").click(function () {
+            $("#menu").fadeOut();
+        });
+    </script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+        onload="if(submitted){window.location='THANKSページのURL';}"></iframe>
 </body>
 
 </html>
