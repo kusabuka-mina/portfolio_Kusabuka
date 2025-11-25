@@ -1518,8 +1518,8 @@ textarea.c-form__input {
 .c-submit {
     display: block;
     width: 50%;
-    margin: 102px auto 180px;
-    padding: 16px 20px;
+    margin: 102px auto 0;
+    padding: 30px 20px;
     /* border: 2px solid  */
     color: #fff;
     font-size: 14px;
